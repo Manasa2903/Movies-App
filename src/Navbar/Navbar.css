@@ -1,0 +1,9 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.svg-icon {
+    width: 200px;
+    height: 45px;
+    cursor: pointer;
+}
