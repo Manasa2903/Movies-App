@@ -6,7 +6,6 @@ import Loader from 'react-loader-spinner';
 import {v4 as uuid} from "uuid";
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
 
 class App extends Component {
 
@@ -34,7 +33,7 @@ class App extends Component {
       console.log("Error Occurred : ", error)
     }
   }
- 
+
   
 fetchData = async (event) =>
 {
@@ -74,6 +73,7 @@ changeMovieName = (event) =>
  loadMore = async () => {
   try {
      const {inputVal,movieData, pageCount,url} = this.state
+     console.log(url)
      const fetchedData = await fetch(`${url}${inputVal}&page=${pageCount+1}`)
      const fetchedDataJson = await fetchedData.json()
      console.log(fetchedDataJson)
@@ -120,7 +120,6 @@ changeMovieName = (event) =>
 
         </div>
         }
-        <Footer/>
       </div>
     )
   }

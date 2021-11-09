@@ -12,11 +12,13 @@ const Movies = (props) =>
         <div className= "movie-card">
           <img src={imageSrc} className = "poster" alt={eachData.title}/>
           <div className="movie-details">
-            <p className="title">{eachData.title}</p>
+          <div className="media-type">{eachData.media_type === "tv" ?<p className="media-icon">Tv Show</p>  : <p className="media-icon">Movie</p>}</div>
+          <p className="title">{eachData.title === null || eachData.title === undefined ? "Title Not Available" : eachData.title}</p>
               <div className="movie-details-preview">
-                <p className="release-date">{eachData.release_date}</p>
+              <p className="release-date">{eachData.release_date === undefined?"":eachData.release_date.substr(0,4)}</p>
                 <span className="review">{<StarRating value = {eachData.vote_average/2}/>}</span>
               </div>
+              
               <p className="movie-overview">{eachData.overview === undefined?"":eachData.overview.substr(0,100)}...</p>
             </div>
         </div>

@@ -3,6 +3,7 @@ import {ReactComponent as MMLogo} from "../Manasa Movies (MM)-logo/vector/defaul
 
 const Navbar = () =>
 {
+
     return (
         <nav className="navbar navbar-light bg-light fixed-top">
             <MMLogo className="svg-icon" onClick={() => window.scroll(0,0)}/>
