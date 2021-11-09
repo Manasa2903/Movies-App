@@ -1,0 +1,140 @@
+/*.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+*/
+
+.not-found-image {
+    width: 400px;
+    height: 300px;
+}
+
+.movie-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+}
+
+.movie-app-container {
+    /* background-color: black; */
+    min-height: 100vh;
+}
+
+.no-results {
+    color: #2694EA;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-input {
+    width: 400px;
+    margin-right: 20px;
+}
+
+.button {
+    width: 200px;
+    height: 38px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #2694EA;
+    color: white;
+    outline: none;
+}
+
+.button:hover {
+    background-color: transparent;
+    border: solid 1px #2694EA;
+    color: #2694EA;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:720px) {
+    .form-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .button {
+        width: 100px;
+        height: 35px;
+        margin-top: 20px;
+    }
+    .search-input {
+        width: 250px;
+        margin-right: 0;
+        margin-top: 60px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

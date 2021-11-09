@@ -1,0 +1,28 @@
+#prev-next {
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+
+.indicator {
+    outline: none;
+    width: 25px;
+    border: 0;
+    margin-left: 2px;
+    margin-bottom: 8px;
+}
+
+.active {
+    background-color: orange;
+}
+
+#carouselExampleIndicators {
+    display: block;
+    margin-top: 60px
+}
+
+@media screen and (max-width: 690px) {
+    #carouselExampleIndicators {
+        display: none;
+    }
+}
