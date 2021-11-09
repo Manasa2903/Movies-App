@@ -5,6 +5,21 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import "./Rating.css"
 const StarRating = (props) =>
 {
+  const starColor = () =>
+  {
+    if(props.value >= 4)
+    {
+      return "stars-green"
+    }
+    else if(props.value < 2.5)
+    {
+      return "stars-red"
+    }
+    else
+    {
+      return "stars"
+    }
+  }
     return (
         <div>
           <Rating 
@@ -12,7 +27,7 @@ const StarRating = (props) =>
             size="small"
             value = {props.value}
             precision={0.1}
-            className = "stars"
+            className = {starColor()}
             emptyIcon={
             <StarBorderIcon fontSize="inherit" className="empty-star" />
         }

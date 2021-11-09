@@ -1,6 +1,19 @@
 .stars * {
     font-size: 20px;
     margin-top: 1px;
+    color: orange;
+}
+
+.stars-red * {
+    font-size: 20px;
+    margin-top: 1px;
+    color: red;
+}
+
+.stars-green * {
+    font-size: 20px;
+    margin-top: 1px;
+    color: green;
 }
 
 .empty-star {
