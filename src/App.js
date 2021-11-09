@@ -6,7 +6,6 @@ import Loader from 'react-loader-spinner';
 import {v4 as uuid} from "uuid";
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
 
 class App extends Component {
 
@@ -34,7 +33,7 @@ class App extends Component {
       console.log("Error Occurred : ", error)
     }
   }
- 
+
   
 fetchData = async (event) =>
 {
@@ -42,14 +41,14 @@ fetchData = async (event) =>
   try
   {  
     event.preventDefault()
-    const {inputVal, url,pageCount} = this.state
+    const {inputVal, url} = this.state
     console.log(this.state.pageCount, "568")
     //this.setState(prevState => ({ pageCount:1,isLoading : !prevState.isLoading}))
     //this.setState({pageCount:1})
     this.setState({isLoading: !this.state.isLoading, pageCount : 1})
     console.log(this.state.pageCount, "123")
 
-    const fetchedData = await fetch(`${url}${inputVal}&page=${pageCount}`)
+    const fetchedData = await fetch(`${url}${inputVal}&page=1`)
     const fetchedDataJson = await fetchedData.json()
     console.log(fetchedDataJson)
     this.setState(prevState => ({movieData : fetchedDataJson.results, total_result : fetchedDataJson.total_results, totalPage : fetchedDataJson.total_pages, isLoading: !prevState.isLoading, pageCount : 1}))
@@ -74,13 +73,13 @@ changeMovieName = (event) =>
  loadMore = async () => {
   try {
      const {inputVal,movieData, pageCount,url} = this.state
-     this.setState(prevState => ({isLoading: !prevState.isLoading}))
+     console.log(url)
      const fetchedData = await fetch(`${url}${inputVal}&page=${pageCount+1}`)
      const fetchedDataJson = await fetchedData.json()
      console.log(fetchedDataJson)
     const loadMoreMovies = [...movieData, ...fetchedDataJson.results]
      console.log(loadMoreMovies)
-     this.setState(prevState => ({movieData : loadMoreMovies, pageCount : prevState.pageCount + 1, isLoading: !prevState.isLoading}))
+     this.setState(prevState => ({movieData : loadMoreMovies, pageCount : prevState.pageCount + 1}))
    } catch (error) {
     console.log("Error occurred " , error)  }
     }
@@ -121,7 +120,6 @@ changeMovieName = (event) =>
 
         </div>
         }
-        <Footer/>
       </div>
     )
   }
