@@ -25,7 +25,7 @@ class App extends Component {
     const {url,pageCount} = this.state
     const popularFetchedData = await fetch(`${url}&page=${pageCount}`);
     const popularFetchedDataJson = await popularFetchedData.json()
-    console.log(popularFetchedDataJson)
+    //console.log(popularFetchedDataJson)
     this.setState(prevState => ({movieData : popularFetchedDataJson.results,totalPage : popularFetchedDataJson.total_pages, total_result : popularFetchedDataJson.total_results, isLoading : !prevState.isLoading}))
     }
     catch(error)
@@ -42,15 +42,15 @@ fetchData = async (event) =>
   {  
     event.preventDefault()
     const {inputVal, url} = this.state
-    console.log(this.state.pageCount, "568")
+    //console.log(this.state.pageCount, "568")
     //this.setState(prevState => ({ pageCount:1,isLoading : !prevState.isLoading}))
     //this.setState({pageCount:1})
     this.setState({isLoading: !this.state.isLoading, pageCount : 1})
-    console.log(this.state.pageCount, "123")
+    //console.log(this.state.pageCount, "123")
 
     const fetchedData = await fetch(`${url}${inputVal}&page=1`)
     const fetchedDataJson = await fetchedData.json()
-    console.log(fetchedDataJson)
+    //console.log(fetchedDataJson)
     this.setState(prevState => ({movieData : fetchedDataJson.results, total_result : fetchedDataJson.total_results, totalPage : fetchedDataJson.total_pages, isLoading: !prevState.isLoading, pageCount : 1}))
   }
   catch(error)
@@ -62,7 +62,7 @@ fetchData = async (event) =>
 changeMovieName = (event) =>
 {
   const searchInputVal = event.target.value
-  console.log(searchInputVal)
+  //console.log(searchInputVal)
   if(searchInputVal !== "")
   {
     this.setState({inputVal : event.target.value, url: "https://api.themoviedb.org/3/search/multi?api_key=4bfa76ff14b5cf956b8cf30872fc1d4e&language=en-US&query=", pageCount : 1})
@@ -73,12 +73,12 @@ changeMovieName = (event) =>
  loadMore = async () => {
   try {
      const {inputVal,movieData, pageCount,url} = this.state
-     console.log(url)
+     //console.log(url)
      const fetchedData = await fetch(`${url}${inputVal}&page=${pageCount+1}`)
      const fetchedDataJson = await fetchedData.json()
-     console.log(fetchedDataJson)
+     //console.log(fetchedDataJson)
     const loadMoreMovies = [...movieData, ...fetchedDataJson.results]
-     console.log(loadMoreMovies)
+    // console.log(loadMoreMovies)
      this.setState(prevState => ({movieData : loadMoreMovies, pageCount : prevState.pageCount + 1}))
    } catch (error) {
     console.log("Error occurred " , error)  }
