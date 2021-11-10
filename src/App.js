@@ -83,6 +83,7 @@ changeMovieName = (event) =>
    } catch (error) {
     console.log("Error occurred " , error)  }
     }
+    
   render() {
     
     const {movieData, pageCount, totalPage, total_result,isLoading} = this.state

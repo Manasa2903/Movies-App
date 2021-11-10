@@ -39,8 +39,9 @@
 */
 
 .not-found-image {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 230px;
+    margin-top: 30px;
 }
 
 .movie-card-container {
@@ -60,6 +61,7 @@
     color: #2694EA;
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 25px;
 }
 
 .movie-container {
@@ -118,22 +120,13 @@
     width: 10px;
 }
 
-
-/* Track */
-
  ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-
-/* Handle */
-
  ::-webkit-scrollbar-thumb {
     background: #888;
 }
-
-
-/* Handle on hover */
 
  ::-webkit-scrollbar-thumb:hover {
     background: #555;

@@ -7,7 +7,7 @@ const StarRating = (props) =>
 {
   const starColor = () =>
   {
-    if(props.value >= 4)
+    if(props.value > 4)
     {
       return "stars-green"
     }
